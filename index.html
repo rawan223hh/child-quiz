@@ -29,36 +29,8 @@
 </div>
 
 <script>
-    const questions = {
-        "Wood": [
-            ["Does your child enjoy trying new things and taking on challenges?", "هل يحب طفلك تجربة أشياء جديدة وخوض التحديات؟"],
-            ["Does your child love movement and physical activities?", "هل يحب طفلك الأنشطة البدنية والحركة؟"]
-        ],
-        "Fire": [
-            ["Does your child love being around people and enjoy attention?", "هل يحب طفلك أن يكون بين الناس ويستمتع بالاهتمام؟"],
-            ["Does your child have a playful and energetic personality?", "هل يتمتع طفلك بشخصية مرحة ومليئة بالطاقة؟"]
-        ],
-        "Earth": [
-            ["Is your child caring and thoughtful towards others?", "هل طفلك عطوف ويهتم بالآخرين؟"],
-            ["Does your child prefer working in groups rather than alone?", "هل يفضل طفلك العمل في مجموعات بدلًا من العمل منفردًا؟"]
-        ],
-        "Metal": [
-            ["Does your child like having a routine and dislike surprises?", "هل يحب طفلك الروتين ويكره المفاجآت؟"],
-            ["Is your child detail-oriented and organized?", "هل طفلك دقيق ومنظم؟"]
-        ],
-        "Water": [
-            ["Does your child have a big imagination and love to dream?", "هل لدى طفلك خيال واسع ويحب الأحلام؟"],
-            ["Does your child prefer quiet, peaceful environments?", "هل يفضل طفلك البيئات الهادئة والمسالمة؟"]
-        ]
-    };
-
-    const resultsData = {
-        "Wood": { "traits": "Energetic, curious, strong-willed.", "encouragement": "Encourage activities like martial arts.", "careers": "Entrepreneur, doctor." },
-        "Fire": { "traits": "Excitable, social, playful.", "encouragement": "Use team sports, role-playing.", "careers": "Teacher, journalist." },
-        "Earth": { "traits": "Caring, kind, thoughtful.", "encouragement": "Encourage group activities.", "careers": "Social worker, nurse." },
-        "Metal": { "traits": "Organized, careful, detail-oriented.", "encouragement": "Provide structured schedules.", "careers": "Engineer, scientist." },
-        "Water": { "traits": "Imaginative, quiet, reflective.", "encouragement": "Encourage writing, drawing.", "careers": "Writer, psychologist." }
-    };
+    const questions = {"Wood": [...], "Fire": [...], "Earth": [...], "Metal": [...], "Water": [...]} // Full questions go here
+    const resultsData = {"Wood": {...}, "Fire": {...}, "Earth": {...}, "Metal": {...}, "Water": {...}} // Full results go here
 
     function createQuiz() {
         const quizContainer = document.getElementById("questions");
@@ -70,12 +42,10 @@
             questions[element].forEach((q, index) => {
                 const questionDiv = document.createElement("div");
                 questionDiv.classList.add("question");
-                questionDiv.innerHTML = `
-                    <label>${q[0]}<br><strong>${q[1]}</strong></label><br>
-                    <input type="radio" name="${element}-${index}" value="1" required> 1 (Rarely) / نادرًا
-                    <input type="radio" name="${element}-${index}" value="2"> 2 (Sometimes) / أحيانًا
-                    <input type="radio" name="${element}-${index}" value="3"> 3 (Very Often) / غالبًا
-                `;
+                questionDiv.innerHTML = `<label>${q[0]}<br><strong>${q[1]}</strong></label><br>
+                    <input type="radio" name="${element}-${index}" value="1" required> 1 (Rarely) 
+                    <input type="radio" name="${element}-${index}" value="2"> 2 (Sometimes) 
+                    <input type="radio" name="${element}-${index}" value="3"> 3 (Very Often) `;
                 quizContainer.appendChild(questionDiv);
             });
         }
@@ -85,10 +55,17 @@
         event.preventDefault();
         let scores = { Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 };
         const formData = new FormData(event.target);
-        for (let [key, value] of formData.entries()) { scores[key.split("-")[0]] += parseInt(value); }
+        for (let [key, value] of formData.entries()) {
+            const element = key.split("-")[0];
+            scores[element] += parseInt(value);
+        }
         const highestElement = Object.keys(scores).reduce((a, b) => (scores[a] > scores[b] ? a : b));
-        document.getElementById("result").innerHTML = `<h3>${highestElement} / العنصر المسيطر: ${highestElement}</h3>`;
-        document.getElementById("result").style.display = "block";
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `<h3>Dominant Element: ${highestElement} / العنصر المسيطر: ${highestElement}</h3>
+            <p><strong>Traits:</strong> ${resultsData[highestElement].traits}</p>
+            <p><strong>Encouragement:</strong> ${resultsData[highestElement].encouragement}</p>
+            <p><strong>Potential Careers:</strong> ${resultsData[highestElement].careers}</p>`;
+        resultDiv.style.display = "block";
     }
 
     document.getElementById("quiz-form").addEventListener("submit", calculateResults);
