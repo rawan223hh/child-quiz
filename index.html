@@ -29,8 +29,35 @@
 </div>
 
 <script>
-    const questions = {"Wood": [...], "Fire": [...], "Earth": [...], "Metal": [...], "Water": [...]} // Full questions go here
-    const resultsData = {"Wood": {...}, "Fire": {...}, "Earth": {...}, "Metal": {...}, "Water": {...}} // Full results go here
+    const questions = {
+        "Wood": [
+            ["Does your child enjoy trying new things and taking on challenges?", "هل يحب طفلك تجربة أشياء جديدة وخوض التحديات؟"],
+            ["Does your child learn physically?", "هل يتعلم طفلك من خلال النشاط البدني؟"],
+            ["Does your child twitch and squirm?", "هل يتحرك طفلك كثيرًا ولا يستطيع الجلوس بلا حراك؟"],
+            ["Does your child dislike being told what to do or feeling restricted?", "هل يكره طفلك أن يُملى عليه ما يجب فعله أو أن يشعر بالتقييد؟"],
+            ["Does your child love the thrill of danger?", "هل يحب طفلك الإثارة والمخاطرة؟"]
+        ],
+        "Fire": [
+            ["Does your child love being around other people and enjoy attention?", "هل يحب طفلك أن يكون بين الناس ويستمتع بالاهتمام؟"],
+            ["Does your child often change moods quickly?", "هل يتغير مزاج طفلك بسرعة؟"],
+            ["Does your child have difficulty falling asleep?", "هل يواجه طفلك صعوبة في النوم؟"],
+            ["Does your child get distracted easily by changes around them?", "هل يتشتت انتباه طفلك بسهولة بسبب التغييرات من حوله؟"],
+            ["Is your child easily panicked or upset by small issues?", "هل يشعر طفلك بالذعر أو الإحباط بسهولة بسبب مشكلات صغيرة؟"]
+        ]
+    };
+
+    const resultsData = {
+        "Wood": {
+            "traits": "Energetic, curious, strong-willed, quick to act.",
+            "encouragement": "Encourage activities like hiking, martial arts, and hands-on learning.",
+            "careers": "Entrepreneur, emergency responder, doctor, lawyer, artist."
+        },
+        "Fire": {
+            "traits": "Excitable, social, playful, optimistic.",
+            "encouragement": "Use team sports, role-playing, and creative arts like dance and acting.",
+            "careers": "Teacher, journalist, chef, musician, daycare worker."
+        }
+    };
 
     function createQuiz() {
         const quizContainer = document.getElementById("questions");
@@ -43,9 +70,9 @@
                 const questionDiv = document.createElement("div");
                 questionDiv.classList.add("question");
                 questionDiv.innerHTML = `<label>${q[0]}<br><strong>${q[1]}</strong></label><br>
-                    <input type="radio" name="${element}-${index}" value="1" required> 1 (Rarely) 
-                    <input type="radio" name="${element}-${index}" value="2"> 2 (Sometimes) 
-                    <input type="radio" name="${element}-${index}" value="3"> 3 (Very Often) `;
+                    <input type="radio" name="${element}-${index}" value="1" required> 1 (Rarely)
+                    <input type="radio" name="${element}-${index}" value="2"> 2 (Sometimes)
+                    <input type="radio" name="${element}-${index}" value="3"> 3 (Very Often)`;
                 quizContainer.appendChild(questionDiv);
             });
         }
@@ -53,7 +80,7 @@
 
     function calculateResults(event) {
         event.preventDefault();
-        let scores = { Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 };
+        let scores = { Wood: 0, Fire: 0 };
         const formData = new FormData(event.target);
         for (let [key, value] of formData.entries()) {
             const element = key.split("-")[0];
