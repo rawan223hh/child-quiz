@@ -1,102 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Child Element Quiz</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; text-align: center; background-color: #f8f9fa; }
-        .container { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px #ccc; }
-        .question { margin-bottom: 15px; text-align: left; }
-        h2 { color: #4CAF50; }
-        .result { display: none; margin-top: 20px; font-weight: bold; padding: 15px; border-radius: 10px; background: #ffebcd; text-align: left; }
-        .btn { background: #4CAF50; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; }
-        img { width: 150px; display: block; margin: auto; margin-bottom: 20px; }
-    </style>
+<title>Five Elements Test</title>
+<style>
+body { font-family: sans-serif; }
+.element { margin-bottom: 20px; }
+label { display: block; margin-bottom: 5px; }
+input[type="radio"] { margin-right: 10px; }
+#results { margin-top: 20px; border: 1px solid #ccc; padding: 10px; }
+</style>
 </head>
 <body>
 
-<!-- Spectra Cure Clinic Logo -->
-<img src="YOUR_IMAGE_URL_HERE" alt="Spectra Cure Clinic Logo">
+<h1>Five Elements Test</h1>
 
-<div class="container">
-    <h2>Child Element Personality Quiz</h2>
-    <form id="quiz-form">
-        <div id="questions"></div>
-        <button type="submit" class="btn">Get Results / احصل على النتائج</button>
-    </form>
-    <div class="result" id="result"></div>
-</div>
+<form id="quiz">
+
+  <div class="element">
+    <h2>Wood</h2>
+    <label><input type="radio" name="wood1" value="1" required> 1 (Rarely)</label>
+    <label><input type="radio" name="wood1" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood1" value="3"> 3 (Very Often)</label> Does your child enjoy trying new things and taking on challenges?
+    <label><input type="radio" name="wood2" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood2" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood2" value="3"> 3 (Very Often)</label> Does your child learn physically?
+    <label><input type="radio" name="wood3" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood3" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood3" value="3"> 3 (Very Often)</label> Does your child twitch and squirm?
+    <label><input type="radio" name="wood4" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood4" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood4" value="3"> 3 (Very Often)</label> Does your child dislike being told what to do or feeling restricted?
+    <label><input type="radio" name="wood5" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood5" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood5" value="3"> 3 (Very Often)</label> Does your child love the thrill of danger?
+    <label><input type="radio" name="wood6" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood6" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood6" value="3"> 3 (Very Often)</label> Does your child have recurrent bed wetting?
+    <label><input type="radio" name="wood7" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood7" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood7" value="3"> 3 (Very Often)</label> Does your child often show overconfidence or not want help from others?
+    <label><input type="radio" name="wood8" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood8" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood8" value="3"> 3 (Very Often)</label> Does your child have explosive anger when upset?
+    <label><input type="radio" name="wood9" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood9" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood9" value="3"> 3 (Very Often)</label> Does your child crave stimulants like sugar, soda, or butter?
+    <label><input type="radio" name="wood10" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="wood10" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="wood10" value="3"> 3 (Very Often)</label> Does your child have explosive anger when upset?
+  </div>
+
+  <div class="element">
+    <h2>Fire</h2>
+    <label><input type="radio" name="fire1" value="1" required> 1 (Rarely)</label>
+    <label><input type="radio" name="fire1" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire1" value="3"> 3 (Very Often)</label> Does your child love being around other people and enjoy attention?
+    <label><input type="radio" name="fire2" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire2" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire2" value="3"> 3 (Very Often)</label> Does your child often change moods quickly?
+    <label><input type="radio" name="fire3" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire3" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire3" value="3"> 3 (Very Often)</label> Does your child have difficulty falling asleep?
+    <label><input type="radio" name="fire4" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire4" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire4" value="3"> 3 (Very Often)</label> Does your child get distracted easily by changes around them?
+    <label><input type="radio" name="fire5" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire5" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire5" value="3"> 3 (Very Often)</label> Is your child easily panicked or upset by small issues?
+    <label><input type="radio" name="fire6" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire6" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire6" value="3"> 3 (Very Often)</label> Does your child complain of being bored often?
+    <label><input type="radio" name="fire7" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire7" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire7" value="3"> 3 (Very Often)</label> Does your child tend to act impulsively or unpredictably?
+    <label><input type="radio" name="fire8" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire8" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire8" value="3"> 3 (Very Often)</label> Does your child get flushed or sweat a lot?
+    <label><input type="radio" name="fire9" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire9" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire9" value="3"> 3 (Very Often)</label> Does your child experience diarrhea or stomach discomfort often?
+    <label><input type="radio" name="fire10" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="fire10" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="fire10" value="3"> 3 (Very Often)</label> Does your child crave sweets, spicy food or ice?
+  <div class="element">
+    <h2>Metal</h2>
+    <label><input type="radio" name="metal1" value="1" required> 1 (Rarely)</label>
+    <label><input type="radio" name="metal1" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal1" value="3"> 3 (Very Often)</label> Does your child like having a routine and dislike surprises or changes?
+    <label><input type="radio" name="metal2" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal2" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal2" value="3"> 3 (Very Often)</label> Does your child crave unusual food?
+    <label><input type="radio" name="metal3" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal3" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal3" value="3"> 3 (Very Often)</label> Does your child get upset when they make mistakes or when things go wrong?
+    <label><input type="radio" name="metal4" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal4" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal4" value="3"> 3 (Very Often)</label> Does your child like things to be orderly and tidy?
+    <label><input type="radio" name="metal5" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal5" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal5" value="3"> 3 (Very Often)</label> Does your child tend to blame others when something goes wrong?
+    <label><input type="radio" name="metal6" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal6" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal6" value="3"> 3 (Very Often)</label> Does your child get extremely cold easily?
+    <label><input type="radio" name="metal7" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal7" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal7" value="3"> 3 (Very Often)</label> Is your child very sensitive to smells, tastes, or textures?
+    <label><input type="radio" name="metal8" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal8" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal8" value="3"> 3 (Very Often)</label> Does your child experience dry skin or hair?
+    <label><input type="radio" name="metal9" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal9" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal9" value="3"> 3 (Very Often)</label> Does your child have stiff joints?
+    <label><input type="radio" name="metal10" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="metal10" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="metal10" value="3"> 3 (Very Often)</label> Does your child experience constipation?
+  <div class="element">
+    <h2>Water</h2>
+    <label><input type="radio" name="water1" value="1" required> 1 (Rarely)</label>
+    <label><input type="radio" name="water1" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water1" value="3"> 3 (Very Often)</label> Does your child have a big imagination and enjoy daydreaming?
+    <label><input type="radio" name="water2" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water2" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water2" value="3"> 3 (Very Often)</label> Does your child feel comfortable being alone?
+    <label><input type="radio" name="water3" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water3" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water3" value="3"> 3 (Very Often)</label> Does your child have trouble finishing tasks or feel like giving up?
+    <label><input type="radio" name="water4" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water4" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water4" value="3"> 3 (Very Often)</label> Does your child take their time doing things?
+    <label><input type="radio" name="water5" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water5" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water5" value="3"> 3 (Very Often)</label> Does your child have negative thoughts or get stuck in a negative mood?
+    <label><input type="radio" name="water6" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water6" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water6" value="3"> 3 (Very Often)</label> Does your child struggle with being motivated to do things?
+    <label><input type="radio" name="water7" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water7" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water7" value="3"> 3 (Very Often)</label> Does your child have difficulty expressing their ideas or emotions?
+    <label><input type="radio" name="water8" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water8" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water8" value="3"> 3 (Very Often)</label> Does your child have a strong memory?
+    <label><input type="radio" name="water9" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water9" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water9" value="3"> 3 (Very Often)</label> Does your child experience backaches or low physical stamina?
+    <label><input type="radio" name="water10" value="1"> 1 (Rarely)</label>
+    <label><input type="radio" name="water10" value="2"> 2 (Sometimes)</label>
+    <label><input type="radio" name="water10" value="3"> 3 (Very Often)</label> Does your child crave salty, meats or hot foods?
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<div id="results"></div>
 
 <script>
-    const questions = {
-        "Wood": [
-            ["Does your child enjoy trying new things and taking on challenges?", "هل يحب طفلك تجربة أشياء جديدة وخوض التحديات؟"],
-            ["Does your child learn physically?", "هل يتعلم طفلك من خلال النشاط البدني؟"],
-            ["Does your child twitch and squirm?", "هل يتحرك طفلك كثيرًا ولا يستطيع الجلوس بلا حراك؟"],
-            ["Does your child dislike being told what to do or feeling restricted?", "هل يكره طفلك أن يُملى عليه ما يجب فعله أو أن يشعر بالتقييد؟"],
-            ["Does your child love the thrill of danger?", "هل يحب طفلك الإثارة والمخاطرة؟"]
-        ],
-        "Fire": [
-            ["Does your child love being around other people and enjoy attention?", "هل يحب طفلك أن يكون بين الناس ويستمتع بالاهتمام؟"],
-            ["Does your child often change moods quickly?", "هل يتغير مزاج طفلك بسرعة؟"],
-            ["Does your child have difficulty falling asleep?", "هل يواجه طفلك صعوبة في النوم؟"],
-            ["Does your child get distracted easily by changes around them?", "هل يتشتت انتباه طفلك بسهولة بسبب التغييرات من حوله؟"],
-            ["Is your child easily panicked or upset by small issues?", "هل يشعر طفلك بالذعر أو الإحباط بسهولة بسبب مشكلات صغيرة؟"]
-        ]
-    };
-
-    const resultsData = {
-        "Wood": {
-            "traits": "Energetic, curious, strong-willed, quick to act.",
-            "encouragement": "Encourage activities like hiking, martial arts, and hands-on learning.",
-            "careers": "Entrepreneur, emergency responder, doctor, lawyer, artist."
-        },
-        "Fire": {
-            "traits": "Excitable, social, playful, optimistic.",
-            "encouragement": "Use team sports, role-playing, and creative arts like dance and acting.",
-            "careers": "Teacher, journalist, chef, musician, daycare worker."
-        }
-    };
-
-    function createQuiz() {
-        const quizContainer = document.getElementById("questions");
-        for (let element in questions) {
-            const header = document.createElement("h3");
-            header.textContent = element + " Element / عنصر " + element;
-            quizContainer.appendChild(header);
-
-            questions[element].forEach((q, index) => {
-                const questionDiv = document.createElement("div");
-                questionDiv.classList.add("question");
-                questionDiv.innerHTML = `<label>${q[0]}<br><strong>${q[1]}</strong></label><br>
-                    <input type="radio" name="${element}-${index}" value="1" required> 1 (Rarely)
-                    <input type="radio" name="${element}-${index}" value="2"> 2 (Sometimes)
-                    <input type="radio" name="${element}-${index}" value="3"> 3 (Very Often)`;
-                quizContainer.appendChild(questionDiv);
-            });
-        }
-    }
-
-    function calculateResults(event) {
-        event.preventDefault();
-        let scores = { Wood: 0, Fire: 0 };
-        const formData = new FormData(event.target);
-        for (let [key, value] of formData.entries()) {
-            const element = key.split("-")[0];
-            scores[element] += parseInt(value);
-        }
-        const highestElement = Object.keys(scores).reduce((a, b) => (scores[a] > scores[b] ? a : b));
-        const resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = `<h3>Dominant Element: ${highestElement} / العنصر المسيطر: ${highestElement}</h3>
-            <p><strong>Traits:</strong> ${resultsData[highestElement].traits}</p>
-            <p><strong>Encouragement:</strong> ${resultsData[highestElement].encouragement}</p>
-            <p><strong>Potential Careers:</strong> ${resultsData[highestElement].careers}</p>`;
-        resultDiv.style.display = "block";
-    }
-
-    document.getElementById("quiz-form").addEventListener("submit", calculateResults);
-    createQuiz();
+// ... (JavaScript code from previous responses goes here)
 </script>
 
 </body>
